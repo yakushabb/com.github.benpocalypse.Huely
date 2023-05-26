@@ -2,9 +2,7 @@ app-id: com.github.benpocalypse.Huely
 
 sdk: org.gnome.Sdk
 runtime: org.gnome.Platform
-runtime-version: '41'
-base: io.elementary.BaseApp
-base-version: juno-21.08
+runtime-version: '44'
 
 command: com.github.benpocalypse.Huely
 
@@ -13,9 +11,6 @@ finish-args:
   - '--share=network'
   - '--socket=fallback-x11'
   - '--socket=wayland'
-
-  # Needed to read prefer-color-scheme with Granite.Settings
-  - '--system-talk-name=org.freedesktop.Accounts'
 
 modules:
   - name: elementary-stylesheet
@@ -54,5 +49,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/benpocalypse/Huely.git
-        tag: 0.4.0
-        commit: bfa629d9e25a13b1e001eb5ccd56a2e02962dab4
+        tag: 0.4.1
+        commit: 7e58005a09611bc503189ce3b31d7e713d53fcfc
