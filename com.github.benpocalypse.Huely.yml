@@ -2,7 +2,7 @@ app-id: com.github.benpocalypse.Huely
 
 sdk: org.gnome.Sdk
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '45'
 
 command: com.github.benpocalypse.Huely
 
@@ -18,7 +18,7 @@ modules:
     sources:
     - type: git
       url: https://github.com/elementary/stylesheet.git
-      commit: 3047efbfabe723e0b0f2b8ee3d53bed528be4b14
+      commit: d521bf955423330ac809616d935b9063cbadd5cb
     modules:
     - name: sassc
       cleanup:
@@ -26,7 +26,7 @@ modules:
       sources:
       - type: git
         url: https://github.com/sass/sassc.git
-        tag: 3.6.1
+        tag: 3.6.2
       - type: script
         dest-filename: autogen.sh
         commands:
@@ -38,7 +38,7 @@ modules:
         sources:
         - type: git
           url: https://github.com/sass/libsass.git
-          tag: 3.6.4
+          tag: 3.6.6
         - type: script
           dest-filename: autogen.sh
           commands:
@@ -49,5 +49,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/benpocalypse/Huely.git
-        tag: 0.4.1
-        commit: 7e58005a09611bc503189ce3b31d7e713d53fcfc
+        tag: 0.4.2
+        commit: e1dd4e9bcb230c1ae396d0534ed46ed58624b0f0
