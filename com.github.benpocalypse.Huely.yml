@@ -49,5 +49,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/benpocalypse/Huely.git
-        tag: 0.4.2
-        commit: e1dd4e9bcb230c1ae396d0534ed46ed58624b0f0
+        tag: 0.4.3
+        commit: d59f50e02bfd485039f43fd5970c001114ab7c5a
