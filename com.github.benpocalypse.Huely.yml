@@ -28,3 +28,8 @@ modules:
         url: https://github.com/benpocalypse/Huely.git
         tag: 0.4.3
         commit: d59f50e02bfd485039f43fd5970c001114ab7c5a
+    post-install:
+      # workaround for non-png-icon-in-hicolor-size-folder lint error
+      - mkdir -p /app/share/icons/hicolor/scalable/apps
+      - mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      - find /app/share/icons/hicolor -type f -not -path "*scalable*" -not -path "*actions*" -name "*.svg" -delete
