@@ -1,9 +1,9 @@
 app-id: com.github.benpocalypse.Huely
-
-sdk: org.gnome.Sdk
-runtime: org.gnome.Platform
-runtime-version: '45'
-
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+base: 'io.elementary.BaseApp'
+base-version: 'juno-23.08'
+sdk: org.freedesktop.Sdk
 command: com.github.benpocalypse.Huely
 
 finish-args:
@@ -13,37 +13,14 @@ finish-args:
   - '--socket=wayland'
 
 modules:
-  - name: elementary-stylesheet
+  - name: libhandy
     buildsystem: meson
+    config-opts:
+      - -Dexamples=false
     sources:
-    - type: git
-      url: https://github.com/elementary/stylesheet.git
-      commit: d521bf955423330ac809616d935b9063cbadd5cb
-    modules:
-    - name: sassc
-      cleanup:
-      - "*"
-      sources:
-      - type: git
-        url: https://github.com/sass/sassc.git
-        tag: 3.6.2
-      - type: script
-        dest-filename: autogen.sh
-        commands:
-        - autoreconf -si
-      modules:
-      - name: libsass
-        cleanup:
-        - "*"
-        sources:
-        - type: git
-          url: https://github.com/sass/libsass.git
-          tag: 3.6.6
-        - type: script
-          dest-filename: autogen.sh
-          commands:
-          - autoreconf -si
-
+      - type: archive
+        url: https://download.gnome.org/sources/libhandy/1.8/libhandy-1.8.3.tar.xz
+        sha256: 05b497229073ff557f10b326e074c5066f8743a302d4820ab97bcb5cd2dab087
   - name: Huely
     buildsystem: meson
     sources:
